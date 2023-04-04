@@ -28,14 +28,14 @@ def month_activity_map(selected_user,df,k):
     return df['month'].value_counts()
 
 # Will return hear map containing count of messages having k(0/1/-1) sentiment
-def activity_heatmap(selected_user,df,k):
-    if selected_user != 'Overall':
-        df = df[df['user'] == selected_user]
-    df = df[df['value'] == k]
+# def activity_heatmap(selected_user,df,k):
+#     if selected_user != 'Overall':
+#         df = df[df['user'] == selected_user]
+#     df = df[df['value'] == k]
     
-    # Creating heat map
-    user_heatmap = df.pivot_table(index='day_name', columns='period', values='message', aggfunc='count').fillna(0)
-    return user_heatmap
+#     # Creating heat map
+#     user_heatmap = df.pivot_table(index='day_name', columns='period', values='message', aggfunc='count').fillna(0)
+#     return user_heatmap
 
 
 # Will return count of messages of selected user per date having k(0/1/-1) sentiment
