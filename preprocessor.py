@@ -17,9 +17,11 @@ def preprocess(data):
     
     # convert dates type
     try:
-        df['message_date'] = pd.to_datetime(df['message_date'], format='%d/%m/%y, %H:%M - ')
-    except:
         df['message_date'] = pd.to_datetime(df['message_date'], format='%m/%d/%y, %H:%M - ')
+    except ValueError:
+        df['message_date'] = pd.to_datetime(df['message_date'], format='%d/%m/%Y, %H:%M - ')
+        df['message_date'] = df['message_date'].apply(lambda x: x.replace(year=x.year+0))
+        df['message_date'] = pd.to_datetime(df['message_date'])
     df.rename(columns={'message_date': 'date'}, inplace=True)
 
     users = []
