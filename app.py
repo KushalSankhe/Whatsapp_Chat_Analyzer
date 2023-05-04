@@ -18,7 +18,7 @@ plt.rcParams.update(
 )
 
 # App title
-st.sidebar.title("Whatsapp Chat  Sentiment Analyzer")
+st.sidebar.title("Whatsapp Chat Analyzer")
 
 # VADER : is a lexicon and rule-based sentiment analysis tool that is specifically attuned to sentiments.
 nltk.download('vader_lexicon')
@@ -27,7 +27,7 @@ nltk.download('vader_lexicon')
 uploaded_file = st.sidebar.file_uploader("Choose a file")
 
 # Main heading
-st. markdown("<h1 style='text-align: center; color: grey;'>Whatsapp Chat  Sentiment Analyzer</h1>", unsafe_allow_html=True)
+st. markdown("<h1 style='text-align: center; color: grey;'>Whatsapp Chat Analyzer</h1>", unsafe_allow_html=True)
 
 if uploaded_file is not None:
     
